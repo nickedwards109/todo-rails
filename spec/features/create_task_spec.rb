@@ -7,17 +7,22 @@ describe "new task creation", type: :feature do
     visit welcome_path
     click_on "New Task"
     expect(current_path).to eq(new_task_path)
-    fill_in "#name", with: "Task 1"
-    fill_in "#due-date", with: "04/15/19"
-    fill_in "#description", with: "This is a description for Task 1."
-    click_on "#submit"
+    fill_in "task[name]", with: "Task 1"
+    fill_in "task[due_date]", with: "15/04/19"
+    fill_in "task[description]", with: "This is a description for Task 1."
+    click_on "Create Task"
 
-    expect(current_path).to eq(task_path)
+    task = Task.first
+
+    expect(current_path).to eq(task_path(task.id))
     expect(Task.count).to eq(1)
     expect(page).to have_content("Task 1")
-    expect(page).to have_content("04/15/19")
+    expect(page).to have_content("15-04-19")
     expect(page).to have_content("This is a description for Task 1.")
     expect(page).to have_content("This task has not yet been completed.")
-    expect(page).to have_link("Show All Tasks", href: "tasks")
   end
+
+  # TODO make a feature spec for an index page that shows all tasks
+  # also, specify a link to the tasks index page from a task show page
+  #expect(page).to have_link("Show All Tasks", href: "tasks")
 end
