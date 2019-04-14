@@ -8,4 +8,5 @@
   <span>This task has been completed!</span>
 <% else %>
   <span>This task has not yet been completed.</span>
-<% end %>
+  <%= link_to "Mark Task as Completed", task_path(@task.id), method: :put %>
+<% end %><br/>

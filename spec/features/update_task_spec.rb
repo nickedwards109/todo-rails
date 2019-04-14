@@ -12,5 +12,6 @@ describe "updating a task" do
     click_on("Mark Task as Completed")
     expect(current_path).to eq(task_path(task.id))
     expect(page).to have_content("This task has been completed!")
+    expect(page).to_not have_content("Mark Task as Completed")
   end
 end
