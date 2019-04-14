@@ -17,6 +17,10 @@ class TasksController < ApplicationController
     @task = Task.find(id)
   end
 
+  def index
+    @tasks = Task.all
+  end
+
   private
 
   def task_params

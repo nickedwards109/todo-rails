@@ -3,6 +3,6 @@ Rails.application.routes.draw do
 
   get 'welcome' => 'pages#welcome'
 
-  resources :tasks, only: [:new, :create, :show]
+  resources :tasks, only: [:new, :create, :show, :index]
 
 end

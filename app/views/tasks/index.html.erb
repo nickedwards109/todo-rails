@@ -1,0 +1,15 @@
+<% @tasks.each do |task| %>
+
+  <span>Name: </span><%= task.name %><br />
+  <span>Due Date: </span><%= task.due_date %><br />
+  <span>Description: </span><%= task.description %><br/>
+
+  <% if task.completed? %>
+    <span>This task has been completed!</span>
+  <% else %>
+    <span>This task has not yet been completed.</span>
+  <% end %>
+
+  <br />
+
+<% end %>
