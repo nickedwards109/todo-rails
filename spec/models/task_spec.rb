@@ -5,11 +5,11 @@ describe Task, type: :model do
   that is false by default" do
     task = Task.create(
              name: "Task name",
-             due_date: "04/15/19",
+             due_date: "15/04/19",
              description: "This is a description for a task."
            )
     expect(task).to be_valid
-    expect(task.completed?).to be_false
+    expect(task.completed?).to eq(false)
   end
 
   it "validates for the presence of name, due date, and description" do
