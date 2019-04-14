@@ -21,8 +21,4 @@ describe "new task creation", type: :feature do
     expect(page).to have_content("This is a description for Task 1.")
     expect(page).to have_content("This task has not yet been completed.")
   end
-
-  # TODO make a feature spec for an index page that shows all tasks
-  # also, specify a link to the tasks index page from a task show page
-  #expect(page).to have_link("Show All Tasks", href: "tasks")
 end
