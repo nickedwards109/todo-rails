@@ -1,12 +1,14 @@
-<%=  link_to "Show All Tasks", tasks_path %>
+<%=  link_to "Show All Tasks", tasks_path %><br/>
 
-<span>Name: </span><%= @task.name %><br />
-<span>Due Date: </span><%= @task.due_date %><br />
-<span>Description: </span><%= @task.description %><br/>
+<div class="task_container">
+  <span>Name: </span><%= @task.name %><br />
+  <span>Due Date: </span><%= @task.due_date %><br />
+  <span>Description: </span><%= @task.description %><br/>
 
-<% if @task.completed? %>
-  <span>This task has been completed!</span>
-<% else %>
-  <span>This task has not yet been completed.</span>
-  <%= link_to "Mark Task as Completed", task_path(@task.id), method: :put %>
-<% end %><br/>
+  <% if @task.completed? %>
+    <span>This task has been completed!</span>
+  <% else %>
+    <span>This task has not yet been completed.</span>
+    <%= link_to "Mark Task as Completed", task_path(@task.id), method: :put %>
+  <% end %><br/>
+</div>
