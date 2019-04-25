@@ -1,12 +1,20 @@
 <%= form_for @task do |f| %>
-  <%= f.label "name" %>
-  <%= f.text_field "name", {class: "name"} %><br/>
+  <div class="form_label_and_field">
+    <%= f.label "name", {class: "label"} %>
+    <%= f.text_field "name", {class: "field_small"} %><br/>
+  </div>
 
-  <%= f.label "due_date" %>
-  <%= f.text_field "due_date", {class: "due_date"} %><br/>
+  <div class="form_label_and_field">
+    <%= f.label "due_date", {class: "label"} %>
+    <%= f.text_field "due_date", {class: "field_small"} %><br/>
+  </div>
 
-  <%= f.label "description" %>
-  <%= f.text_area "description", {class: "description"} %><br/>
+  <div class="form_label_and_field">
+    <%= f.label "description", {class: "label"} %>
+    <%= f.text_area "description", {class: "field_large"} %><br/>
+  </div>
 
-  <%= f.submit %>
+  <div class="centered_button_container">
+    <%= f.submit %>
+  </div>
 <% end  %>
